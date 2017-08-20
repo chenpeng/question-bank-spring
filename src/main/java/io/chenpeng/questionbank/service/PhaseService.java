@@ -28,6 +28,7 @@ public class PhaseService {
     public PhaseOutputDTO save(PhaseInputDTO phaseInputDTO) {
         Phase phase = phaseInputDTO.convertToPhase();
         phase.setDeleted(false);
+        phase.setState(0);
         phase = phaseRepository.save(phase);
         return new PhaseOutputDTO().convertFor(phase);
     }

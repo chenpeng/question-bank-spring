@@ -28,6 +28,7 @@ public class TermService {
     public TermOutputDTO save(TermInputDTO termInputDTO) {
         Term term = termInputDTO.convertToTerm();
         term.setDeleted(false);
+        term.setState(0);
         term = termRepository.save(term);
         return new TermOutputDTO().convertFor(term);
     }

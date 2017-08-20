@@ -32,6 +32,7 @@ public class QuestionSourceService {
     public QuestionSourceOutputDTO save(QuestionSourceInputDTO questionSourceInputDTO) {
         QuestionSource questionSource = questionSourceInputDTO.convertToQuestionSource();
         questionSource.setDeleted(false);
+        questionSource.setState(0);
         questionSource = questionSourceRepository.save(questionSource);
         return new QuestionSourceOutputDTO().convertFor(questionSource);
     }

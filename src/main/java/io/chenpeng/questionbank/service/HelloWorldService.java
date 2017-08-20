@@ -32,6 +32,7 @@ public class HelloWorldService {
     public HelloWorldOutputDTO save(HelloWorldInputDTO helloWorldInputDTO) {
         HelloWorld helloWorld = helloWorldInputDTO.convertToHelloWorld();
         helloWorld.setDeleted(false);
+        helloWorld.setState(0);
         helloWorld = helloWorldRepository.save(helloWorld);
         return new HelloWorldOutputDTO().convertFor(helloWorld);
     }

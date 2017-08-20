@@ -32,6 +32,7 @@ public class EditionService {
     public EditionOutputDTO save(EditionInputDTO editionInputDTO) {
         Edition edition = editionInputDTO.convertToEdition();
         edition.setDeleted(false);
+        edition.setState(0);
         edition = editionRepository.save(edition);
         return new EditionOutputDTO().convertFor(edition);
     }

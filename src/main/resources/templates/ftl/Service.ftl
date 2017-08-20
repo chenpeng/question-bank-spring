@@ -39,6 +39,7 @@ public class ${MODEL}Service {
     public ${MODEL}OutputDTO save(${MODEL}InputDTO ${LOW_MODEL}InputDTO) {
         ${MODEL} ${LOW_MODEL} = ${LOW_MODEL}InputDTO.convertTo${MODEL}();
         ${LOW_MODEL}.setDeleted(false);
+        ${LOW_MODEL}.setState(0);
         ${LOW_MODEL} = ${LOW_MODEL}Repository.save(${LOW_MODEL});
         return new ${MODEL}OutputDTO().convertFor(${LOW_MODEL});
     }

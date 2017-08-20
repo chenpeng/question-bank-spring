@@ -52,6 +52,8 @@ public class PhaseSubjectService {
 
     public PhaseSubjectOutputDTO save(PhaseSubjectInputDTO phaseSubjectInputDTO) {
         PhaseSubject phaseSubject = phaseSubjectInputDTO.convertToPhaseSubject();
+        phaseSubject.setDeleted(false);
+        phaseSubject.setState(0);
         phaseSubject = phaseSubjectRepository.save(phaseSubject);
         return new PhaseSubjectOutputDTO().convertFor(phaseSubject);
     }

@@ -32,6 +32,7 @@ public class GradeService {
     public GradeOutputDTO save(GradeInputDTO gradeInputDTO) {
         Grade grade = gradeInputDTO.convertToGrade();
         grade.setDeleted(false);
+        grade.setState(0);
         grade = gradeRepository.save(grade);
         return new GradeOutputDTO().convertFor(grade);
     }

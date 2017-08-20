@@ -32,6 +32,7 @@ public class ChapterService {
     public ChapterOutputDTO save(ChapterInputDTO chapterInputDTO) {
         Chapter chapter = chapterInputDTO.convertToChapter();
         chapter.setDeleted(false);
+        chapter.setState(0);
         chapter = chapterRepository.save(chapter);
         return new ChapterOutputDTO().convertFor(chapter);
     }

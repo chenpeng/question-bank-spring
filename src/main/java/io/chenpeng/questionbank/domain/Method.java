@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 /**
  * 方法体系
@@ -25,4 +26,20 @@ public class Method {
     private String name; // 知识点名称
 
     private Integer pId; //父节点ID
+
+    private Date createdTime;
+
+    private Date updatedTime;
+
+    private Integer createdUser;
+
+    private Integer updatedUser;
+
+    private Integer state;
+
+    private Boolean deleted;
+
+    private Integer versions;
+
+    private String remarks;
 }

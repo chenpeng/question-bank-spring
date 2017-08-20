@@ -33,6 +33,7 @@ public class SubjectService {
     public SubjectOutputDTO save(SubjectInputDTO subjectInputDTO) {
         Subject subject = subjectInputDTO.convertToSubject();
         subject.setDeleted(false);
+        subject.setState(0);
         subject = subjectRepository.save(subject);
         return new SubjectOutputDTO().convertFor(subject);
     }
